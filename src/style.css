@@ -1,0 +1,154 @@
+:root {
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  line-height: 1.5;
+}
+
+#app {
+  max-width: 500px;
+  margin: 50px auto;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 0 10px rgba(8, 91, 224, 0.5); /*(0, 0, 0, 0.1)*/
+  border-radius: 8px;
+}
+
+.input-group{
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+button:hover{
+  background-color: #535bf2;
+  cursor: pointer;
+}
+
+ul{
+  list-style:none;
+  padding: 0;
+}
+
+li{
+  background: #f9f9f9;
+  border-bottom: 1px solid #eeee;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+
+  flex-wrap: wrap;
+}
+
+li > span {
+  flex: 1;               /* 占据所有剩下的空白空间 */
+  word-break: break-all; /* 强制换行：不管单词多长，必须在框内换行 */
+  margin-right: 10px;    /* 跟右边的按钮保持点距离 */
+  text-align: left;      /* 文字靠左对齐 */
+  line-height: 1.5;      /* 行高稍微大点，多行时好看 */
+}
+
+/* 按钮组的容器 */
+.btn-group {
+  display: flex;       /* 让里面的按钮横着排 */
+  gap: 5px;            /* 按钮之间留点缝隙 */
+  flex-shrink: 0;      /* 防止因为文字太长把按钮挤扁 */
+  align-items: center;
+}
+
+/* 删除按钮样式 */
+button.delete-btn{
+  background-color: #fc8484;
+  font-size: 12px;
+  padding: 4px 8px;
+}
+
+/* 修改按钮样式 */
+button.change-btn{
+  background-color: aquamarine;
+  font-size: 12px;
+  padding: 4px 8px;
+  margin-left: 5px;
+}
+
+/* 修改输入框样式 */
+.edit-input {
+  flex: 1; /* 让它占满剩余空间 */
+  padding: 5px;
+  font-size: 16px;
+  border: 1px solid #4CAF50; 
+  border-radius: 4px;
+  margin-right: 10px;
+}
+
+/* 保存修改按钮样式 */
+button.save-btn {
+  background-color: #ff4444; /* 绿色 */
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+  margin-right: 5px;
+}
+
+/* 取消按钮样式 */
+button.cancel-btn {
+  background-color: #999; /* 灰色 */
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+/* 完成按钮样式 */
+button.complete-btn{
+  font-size: 12px;
+  background-color: rgb(100, 247, 247);
+  margin-left: 5px;
+  padding: 4px 8px;
+}
+
+/* 已完成按钮样式 */
+li.completed{
+  background-color: #e0f7fa;
+  border-left: 5px solid #00bcd4; /* 左边加个粗条，突出显示 */
+  opacity: 0.8; /* 稍微变透明一点点，表示“已存档” */
+}
+
+/* 已完成的任务文字加个删除线 */
+li.completed > span{
+  color: #888;
+  text-decoration: line-through; /* 中间画条线 */
+}
+
+/* 已完成时，那个按钮也可以变一下样子 */
+li.completed .complete-btn {
+  background-color: #b2dfdb; /* 按钮颜色变淡 */
+  color: #000000;
+  cursor: not-allowed; /* 鼠标放上去显示“禁止”手势，暗示不用再点了 */
+}
+
+/* 完成时间样式 */ 
+.completed-time-tag {
+  width: 100%;       /* 占满一整行，这样它就会自动被挤到下面去 */
+  font-size: 12px;   /* 字号小一点 */
+  color: #5e5e5e;       /* 颜色浅一点，不要喧宾夺主 */
+  margin-top: 8px;   /* 跟上面的按钮拉开点距离 */
+  text-align: right; /* 靠右显示比较好看，你也可以改成 left */
+}
+
+/* 底部信息栏（存放左边的时间和右边的时间） */
+.todo-footer {
+  width: 100%;
+  display: flex;          /* 弹性布局，让左右两边排开 */
+  justify-content: space-between; /* 关键：一个靠左，一个靠右 */
+  margin-top: 8px;        /* 跟上面的按钮拉开距离 */
+  font-size: 12px;        /* 字号小一点 */
+  color: #888;            /* 灰色字 */
+}
+
+/* 如果只有右边的完成时间，我们希望它依然靠右，所以加个保险 */
+.todo-footer span:last-child {
+  margin-left: auto; 
+  /* 原理：margin-left: auto 会把元素狠狠地推到最右边 */
+}
